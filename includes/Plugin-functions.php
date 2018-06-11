@@ -10,6 +10,6 @@ function Add_My_Admin_Link()
 		'Products Settings',
 		'Products Settings',
 		'manage_options',
-		'admin-page.php'
+		'/TestPluginWP/includes/admin-page.php'
 	);
 }
