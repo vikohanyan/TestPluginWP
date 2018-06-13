@@ -27,4 +27,7 @@ register_deactivation_hook( __FILE__, 'product_deactivation' );
 
 
 add_action( 'admin_menu', 'Add_Product_Admin_Link' );
-
+function load_scripts_admin() {
+	wp_enqueue_media();
+}
+add_action( 'admin_enqueue_scripts', 'load_scripts_admin' );

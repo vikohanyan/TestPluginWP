@@ -20,6 +20,7 @@ function create_post_type() {
 			),
 			'public' => true,
 			'has_archive' => true,
+			'supports' => array('title','thumbnail','editor'),
 		)
 	);
 }
@@ -49,8 +50,6 @@ function product_settings_admin_page() {
 		wp_die('Unauthorized user');
 	}
 
-//	check_admin_referrer( 'product_settings_admin_page_action' );
-
 	if (isset($_POST['product_price'])) {
 		update_option('product_price', $_POST['product_price']);
 	}
@@ -66,6 +65,11 @@ function product_settings_admin_page() {
 	if (isset($_POST['product_color'])) {
 		update_option('product_color', $_POST['product_color']);
 	}
-
+	add_action( 'admin_enqueue_scripts', 'load_wp_media_files' );
 	include 'admin-page.php';
+
+}
+
+function load_wp_media_files() {
+	wp_enqueue_media();
 }
