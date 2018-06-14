@@ -1,7 +1,7 @@
 <div class="wrap">
     <h1>Products settings</h1>
     <h4>Please choose specification that you need in widget</h4>
-    <form method="post">
+    <form method="post" action="options.php">
 		<?php settings_fields( 'plugin-settings-group' ); ?>
 		<?php do_settings_sections( 'plugin-settings-group' ); ?>
         <div class="form-table">
