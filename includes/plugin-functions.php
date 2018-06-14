@@ -139,13 +139,17 @@ function register_product_settings() {
 	register_setting( 'product-settings-group', 'product_weight' );
 	register_setting( 'product-settings-group', 'product_color' );
 	register_setting( 'product-settings-group', 'product_img' );
+
+	add_option("product_price", "", "", "yes");
+	add_option("product_width", "", "", "yes");
+	add_option("product_height", "", "", "yes");
+	add_option("product_weight", "", "", "yes");
+	add_option("product_color", "", "", "yes");
+	add_option("product_img", "", "", "yes");
 }
 
+
 function product_settings_admin_page() {
-	if (!current_user_can('manage_options')) {
-		wp_die('Unauthorized user');
-	}
-	add_action( 'admin_enqueue_scripts', 'load_wp_media_files' );
 	include 'admin-page.php';
 }
 function load_wp_media_files() {

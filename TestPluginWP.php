@@ -11,7 +11,7 @@ add_action( 'admin_enqueue_scripts', 'load_scripts_admin' );
 add_action( 'init', 'create_post_type' );
 add_action( 'init', 'create_table_test_plugin' );
 add_action( 'admin_init', 'product_fields' );
-add_action('save_post', 'save_product_meta_box', 0);
+add_action( 'save_post', 'save_product_meta_box', 0);
 function product_install()
 {
 	create_table_test_plugin();
